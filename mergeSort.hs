@@ -11,9 +11,9 @@ mergeSort ls
       = merge (mergeSort' left leftLength) (mergeSort' right rightLength)
       where
         (left, right) = splitAt leftLength xs
-        splitPos      = fromIntegral(len) / 2
-        leftLength    = floor splitPos
-        rightLength   = ceiling splitPos
+        halfway       = fromIntegral(len) / 2
+        leftLength    = floor halfway
+        rightLength   = ceiling halfway
 
 merge :: (Ord a) => [a] -> [a] -> [a]
 merge xs []
